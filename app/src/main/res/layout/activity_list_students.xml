@@ -19,11 +19,24 @@
         android:layout_marginBottom="16dp"
         />
 
-    <ListView
-        android:id="@+id/activity_list_student_listview"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
 
-    </ListView>
+        <ListView
+            android:id="@+id/activity_list_student_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:listitem="@layout/item_student"
+            android:layout_marginBottom="16dp">
+        </ListView>
+
+    </ScrollView>
 
 </RelativeLayout>

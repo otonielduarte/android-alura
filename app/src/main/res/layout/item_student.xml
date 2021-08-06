@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
-        android:id="@+id/item_student_name"
+        android:id="@+id/studentName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
@@ -14,10 +14,10 @@
         tools:text="Same student" />
 
     <TextView
-        android:id="@+id/item_student_phone"
+        android:id="@+id/studentPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         tools:text="9999999" />
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
