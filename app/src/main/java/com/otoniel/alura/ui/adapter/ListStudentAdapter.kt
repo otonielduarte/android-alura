@@ -1,6 +1,5 @@
 package com.otoniel.alura.ui.adapter
 
-import android.content.Context
 import android.util.Log
 import android.widget.BaseAdapter
 import com.otoniel.alura.model.Student
@@ -10,7 +9,7 @@ import com.otoniel.alura.R
 import android.view.LayoutInflater
 import android.view.View
 
-class ListStudentAdapter(private val context: Context, private var students: ArrayList<Student>) : BaseAdapter() {
+class ListStudentAdapter(private var students: ArrayList<Student>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return students.size
@@ -35,7 +34,7 @@ class ListStudentAdapter(private val context: Context, private var students: Arr
     private fun bindFields(inflated: View, student: Student) {
         val txtName = inflated.findViewById<TextView>(R.id.studentName)
         val txtPhone = inflated.findViewById<TextView>(R.id.studentPhone)
-        txtName.text = student.nome
+        txtName.text = student.fullName
         txtPhone.text = student.phone
     }
 

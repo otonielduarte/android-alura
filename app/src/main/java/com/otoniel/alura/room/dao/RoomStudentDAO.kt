@@ -12,7 +12,7 @@ interface RoomStudentDAO {
     @Query("SELECT * FROM student WHERE id IN (:studentIds)")
     fun loadAllByIds(studentIds: IntArray): List<Student>
 
-    @Query("SELECT * FROM student WHERE nome LIKE :name LIMIT 1")
+    @Query("SELECT * FROM student WHERE name LIKE :name LIMIT 1")
     fun findByName(name: String): Student
 
     @Update

@@ -4,17 +4,14 @@ import android.content.Context
 import com.otoniel.alura.model.Student
 import com.otoniel.alura.ui.adapter.ListStudentAdapter
 import android.content.DialogInterface
-import android.util.Log
 import androidx.appcompat.app.AlertDialog
-import androidx.room.Room
 import com.otoniel.alura.room.StudentRoom
-import com.otoniel.alura.ui.activity.ConstantsActivities
 
 class StudentListView(private val context: Context) {
 
     private var dao = StudentRoom.getInstance(context).getRoomStudentDAO()
 
-    val adapterView = ListStudentAdapter(context, ArrayList(dao.getAll()))
+    val adapterView = ListStudentAdapter(ArrayList(dao.getAll()))
 
     fun refreshAdapter() {
         adapterView.update(dao.getAll())
@@ -23,7 +20,7 @@ class StudentListView(private val context: Context) {
     fun showDialogRemove(studentRemove: Student) {
         AlertDialog.Builder(context)
             .setTitle("Removing Student")
-            .setMessage("Would you like to remove the student " + studentRemove.nome + "?")
+            .setMessage("Would you like to remove the student " + studentRemove.name + "?")
             .setPositiveButton("Yes") { _: DialogInterface?, _: Int ->
                 removeStudent(studentRemove)
             }

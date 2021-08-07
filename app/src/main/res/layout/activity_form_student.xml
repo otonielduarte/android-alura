@@ -9,7 +9,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/activity_form_name"
+            android:id="@+id/formFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -18,7 +18,16 @@
             android:autofillHints="@string/hint_name" />
 
         <EditText
-            android:id="@+id/activity_form_phone"
+            android:id="@+id/formLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="@string/hint_last_name"
+            android:inputType="textCapWords"
+            android:autofillHints="@string/hint_name" />
+
+        <EditText
+            android:id="@+id/formPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -27,7 +36,7 @@
             android:autofillHints="@string/hint_phone" />
 
         <EditText
-            android:id="@+id/activity_form_email"
+            android:id="@+id/formEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

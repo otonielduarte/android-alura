@@ -4,10 +4,11 @@
     <string name="activity_form_student_edit">Edit student</string>
     <string name="acitivy_list_student_button">Student list</string>
     <string name="contend_fab_description">that button add a new student in list of students</string>
-    <string name="hint_name">Name</string>
+    <string name="hint_name">First Name</string>
     <string name="hint_phone">Phone</string>
     <string name="hint_email">E-mail</string>
     <string name="button_remove">Remove</string>
     <string name="button_edit">Edit</string>
     <string name="button_save">Save</string>
+    <string name="hint_last_name">Last Name</string>
 </resources>

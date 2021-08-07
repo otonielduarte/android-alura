@@ -51,7 +51,7 @@ class ListStudentsActivity : AppCompatActivity(), OnItemClickListener {
 
     private fun handleFabButton() {
         val actionButton = findViewById<FloatingActionButton>(R.id.list_student_activity_fab_add)
-        actionButton.setOnClickListener { v: View? -> initFormActivity() }
+        actionButton.setOnClickListener { initFormActivity() }
     }
 
     private fun initFormActivity() {
@@ -62,7 +62,7 @@ class ListStudentsActivity : AppCompatActivity(), OnItemClickListener {
 
     private fun initFormActivityEdit(student: Student) {
         val formActivity = Intent(this, FormStudentActivity::class.java)
-        formActivity.putExtra(ConstantsActivities.Companion.KEY_STUDENT_EDIT, student)
+        formActivity.putExtra(ConstantsActivities.KEY_STUDENT_EDIT, student)
         startActivity(formActivity)
     }
 
