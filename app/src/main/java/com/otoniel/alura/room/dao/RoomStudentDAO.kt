@@ -8,7 +8,6 @@ interface RoomStudentDAO {
     @Query("SELECT * FROM student")
     fun getAll(): List<Student>
 
-
     @Query("SELECT * FROM student WHERE id IN (:studentIds)")
     fun loadAllByIds(studentIds: IntArray): List<Student>
 

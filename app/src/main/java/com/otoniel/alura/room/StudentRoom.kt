@@ -15,16 +15,20 @@ abstract class StudentRoom : RoomDatabase() {
     abstract fun getRoomStudentDAO(): RoomStudentDAO
 
     companion object {
-        fun getInstance(context: Context): StudentRoom = Room.databaseBuilder(context, StudentRoom::class.java, ConstantsActivities.ROOM_NAME)
-            .allowMainThreadQueries()
-            .addMigrations(StudentMigrations(1, 2), StudentMigrations(2, 3), StudentMigrations(3, 4) )
-            .build()
+        fun getInstance(context: Context): StudentRoom =
+            Room.databaseBuilder(context, StudentRoom::class.java, ConstantsActivities.ROOM_NAME)
+                .allowMainThreadQueries()
+                .addMigrations(StudentMigrations(1, 2),
+                    StudentMigrations(2, 3),
+                    StudentMigrations(3, 4))
+                .build()
     }
 }
 
-private class StudentMigrations(startVersion: Int, endVersion: Int) : Migration(startVersion, endVersion) {
+private class StudentMigrations(startVersion: Int, endVersion: Int) :
+    Migration(startVersion, endVersion) {
     override fun migrate(database: SupportSQLiteDatabase) {
-        if(startVersion == 1 && endVersion == 2) {
+        if (startVersion == 1 && endVersion == 2) {
             // Create new table with info
             database.execSQL("CREATE TABLE IF NOT EXISTS `Student_M` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `phone` TEXT NOT NULL, `email` TEXT NOT NULL)")
             // Copy old table values to new table
@@ -34,11 +38,9 @@ private class StudentMigrations(startVersion: Int, endVersion: Int) : Migration(
             database.execSQL("DROP TABLE Student")
             // Rename the new table for the correct name
             database.execSQL("ALTER TABLE Student_M RENAME TO Student")
-        }
-        else if(startVersion == 2 && endVersion == 3) {
+        } else if (startVersion == 2 && endVersion == 3) {
             database.execSQL("ALTER TABLE Student ADD COLUMN lastName TEXT")
-        }
-        else if(startVersion == 3 && endVersion == 4) {
+        } else if (startVersion == 3 && endVersion == 4) {
             database.execSQL("ALTER TABLE Student ADD COLUMN createdAt INTEGER")
         }
     }
